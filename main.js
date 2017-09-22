@@ -36,8 +36,7 @@ function createWindow() {
     mainWindow = null
   })
 
-  var files = walkSync(path.join(__dirname, "app/models/"));
-  console.log(files);
+  console.log(getModels());
 }
 
 // This method will be called when Electron has finished
@@ -80,3 +79,15 @@ var walkSync = function(dir, filelist) {
   });
   return filelist;
 };
+
+var getModels = function() {
+  var files = walkSync(path.join(__dirname, "app/models/"));
+  var models = [];
+  files.forEach(function(file) {
+    if (file.endsWith(".json") || file.endsWith(".js")) {
+      models.push(file);
+    }
+  });
+
+  return models;
+}
