@@ -35,6 +35,9 @@ function createWindow() {
     // when you should delete the corresponding element.
     mainWindow = null
   })
+
+  var files = walkSync(path.join(__dirname, "app/models/"));
+  console.log(files);
 }
 
 // This method will be called when Electron has finished
@@ -62,3 +65,18 @@ app.on('activate', function() {
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
+
+// List all files in a directory in Node.js recursively in a synchronous fashion
+var walkSync = function(dir, filelist) {
+  var fs = fs || require('fs'),
+    files = fs.readdirSync(dir);
+  filelist = filelist || [];
+  files.forEach(function(file) {
+    if (fs.statSync(dir + file).isDirectory()) {
+      filelist = walkSync(dir + file + '/', filelist);
+    } else {
+      filelist.push(file);
+    }
+  });
+  return filelist;
+};
