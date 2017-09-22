@@ -1,21 +1,21 @@
 {
-  "name": "electron-quick-start",
+  "name": "HubbyEditor",
   "version": "1.0.0",
-  "description": "A minimal Electron application",
+  "description": "Hubby level editor",
   "main": "main.js",
   "scripts": {
     "start": "electron ."
   },
-  "repository": "https://github.com/electron/electron-quick-start",
+  "repository": "git@github.com:orklann/hubby-editor.git",
   "keywords": [
     "Electron",
-    "quick",
-    "start",
-    "tutorial",
-    "demo"
+    "Game",
+    "Indie Game",
+    "Hubby",
+    "Level Editor"
   ],
-  "author": "GitHub",
-  "license": "CC0-1.0",
+  "author": "Aaron Elkins",
+  "license": "Commercial",
   "devDependencies": {
     "electron": "~1.6.2"
   }
