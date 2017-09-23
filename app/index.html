@@ -73,6 +73,7 @@
                         // either do an instanceof() too look for a class
                         if (child instanceof THREE.PointLight) {
                             scene.add(child);
+                            console.log(child.stringify());
                         }
                     }
                  });
