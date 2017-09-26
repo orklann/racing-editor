@@ -58,7 +58,7 @@
                 //scene.fog = new THREE.FogExp2( 0x000000, 0.035 );
 
                 var loader = new THREE.JSONLoader();
-                loader.load('models/cylinder.json', function (geometry, materials) {
+                loader.load('models/pyramid.json', function (geometry, materials) {
                     var mesh = new THREE.Mesh(geometry, materials);
                     mesh.position.set(0, 0, 0);
                     var s = 2.5;
